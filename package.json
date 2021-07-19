@@ -1,0 +1,23 @@
+{
+  "name": "api-spacex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "npx cypress run --config video=false --env allure=ture",
+    "allure:generate": "allure generate allure-results",
+    "clear:allure": "rmdir /Q /S allure-results",
+    "clear:report": "rmdir /Q /S allure-report",
+    "test": "npx npm-run-all cy:run allure:generate",
+    "clear:all": "npx npm-run-all clear:allure clear:report",
+    "allure:open": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.8.6",
+    "cypress": "^7.7.0"
+  }
+}
